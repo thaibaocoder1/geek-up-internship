@@ -1,5 +1,5 @@
 import type { User } from "@/types/user.type";
-import { generateAvatarBaseName } from "@/utils/image";
+import { generateNameBasedAvatar } from "@/utils/image";
 import { AntDesignOutlined } from "@ant-design/icons";
 import { List, ShowButton, useTable } from "@refinedev/antd";
 import type { BaseRecord } from "@refinedev/core";
@@ -18,7 +18,7 @@ const columns: TableProps<User>["columns"] = [
     render(value: string) {
       return (
         <Avatar
-          src={generateAvatarBaseName(value)}
+          src={generateNameBasedAvatar(value)}
           icon={<AntDesignOutlined />}
         />
       );

@@ -1,4 +1,4 @@
-export const generateAvatarBaseName = (name: string) => {
+export const generateNameBasedAvatar = (name: string) => {
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(
     name
   )}&background=random&color=fff`;

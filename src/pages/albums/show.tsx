@@ -3,7 +3,7 @@ import { RESOURCES_NAME } from "@/configs/constants";
 import { Album } from "@/types/album.type";
 import { Photo } from "@/types/photo.type";
 import { User } from "@/types/user.type";
-import { generateAvatarBaseName } from "@/utils/image";
+import { generateNameBasedAvatar } from "@/utils/image";
 import { Show } from "@refinedev/antd";
 import { HttpError, useList, useOne, useShow } from "@refinedev/core";
 import {
@@ -76,7 +76,7 @@ export const AlbumShow = () => {
     <Show>
       <Card>
         <Space direction="horizontal" align="start" style={{ gap: 16 }}>
-          <Avatar src={generateAvatarBaseName(userData.data.name)} />
+          <Avatar src={generateNameBasedAvatar(userData.data.name)} />
           <Space direction="vertical" size="small">
             <Link
               style={{

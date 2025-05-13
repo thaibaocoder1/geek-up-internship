@@ -1,6 +1,6 @@
 import { RESOURCES_NAME } from "@/configs/constants";
 import type { Album } from "@/types/album.type";
-import { generateAvatarBaseName } from "@/utils/image";
+import { generateNameBasedAvatar } from "@/utils/image";
 import { EyeOutlined } from "@ant-design/icons";
 import { Show, ShowButton, useTable } from "@refinedev/antd";
 import { HttpError, useShow } from "@refinedev/core";
@@ -19,7 +19,7 @@ export const UserShow = () => {
     <Show isLoading={userIsLoading}>
       <Card>
         <Space direction="horizontal" align="start" style={{ gap: 16 }}>
-          <Avatar src={generateAvatarBaseName(user?.name || "")} />
+          <Avatar src={generateNameBasedAvatar(user?.name || "")} />
           <Space direction="vertical" size="small">
             <Text style={{ fontSize: 16, fontWeight: 500 }}>{user?.name}</Text>
             <Text>

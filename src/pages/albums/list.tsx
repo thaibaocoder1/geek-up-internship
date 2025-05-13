@@ -1,6 +1,6 @@
 import type { Album } from "@/types/album.type";
 import type { User } from "@/types/user.type";
-import { generateAvatarBaseName } from "@/utils/image";
+import { generateNameBasedAvatar } from "@/utils/image";
 import { List, ShowButton, useTable } from "@refinedev/antd";
 import { BaseRecord, HttpError, useMany, useResource } from "@refinedev/core";
 import { Avatar, Space, Table, TableProps, Typography } from "antd";
@@ -26,7 +26,7 @@ const columns = (users: Record<number, User>): TableProps<Album>["columns"] => [
       if (!user) return "Loading...";
       return (
         <Space>
-          <Avatar src={generateAvatarBaseName(user.name)} />
+          <Avatar src={generateNameBasedAvatar(user.name)} />
           <Text>{user.name}</Text>
         </Space>
       );
